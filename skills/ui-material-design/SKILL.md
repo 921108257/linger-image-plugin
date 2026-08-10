@@ -16,14 +16,20 @@ license: MIT
 
 ## 怎么用
 
+**开发模式（本地未发布）**：
+```bash
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-material-design "<参考图>" ["素材需求"]
+```
+
+**发布后（用户安装后）**：
 ```bash
 npx linger-image-plugin ui-material-design "<参考图>" ["素材需求"]
 ```
 
 ```bash
-npx linger-image-plugin ui-material-design "./ref.jpg"
-npx linger-image-plugin ui-material-design "./style.png" "生成深色系的应用图标素材"
-npx linger-image-plugin ui-material-design "./hero.png" "要一套配套的空状态插画，扁平风"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-material-design "./ref.jpg"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-material-design "./style.png" "生成深色系的应用图标素材"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-material-design "./hero.png" "要一套配套的空状态插画，扁平风"
 ```
 
 ## 默认输出什么
