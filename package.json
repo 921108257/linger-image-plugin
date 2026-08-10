@@ -46,7 +46,8 @@
     ".opencode/",
     "LICENSE",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "EXAMPLES.md"
   ],
   "scripts": {
     "test": "node --test test/*.test.mjs",
