@@ -12,7 +12,7 @@ tags: [vision, diagram, architecture, flowchart, mermaid]
 
 **开发模式（本地未发布）**：
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" diagram-vision "<图表截图>" ["关注点"]
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" diagram-vision "<图表截图>" ["关注点"]
 ```
 
 **发布后（用户安装后）**：
@@ -23,9 +23,9 @@ npx linger-image-plugin diagram-vision "<图表截图>" ["关注点"]
 示例：
 
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" diagram-vision "./architecture.png"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" diagram-vision "./flow.png" "重点看条件分支和循环"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" diagram-vision "./er-diagram.png" "转成 Mermaid ER 图"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" diagram-vision "./architecture.png"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" diagram-vision "./flow.png" "重点看条件分支和循环"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" diagram-vision "./er-diagram.png" "转成 Mermaid ER 图"
 ```
 
 ## 默认输出什么
@@ -46,7 +46,7 @@ node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" di
 
 ```bash
 # 1. 先转成 Mermaid
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" diagram-vision "./legacy-arch.png" > arch.md
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" diagram-vision "./legacy-arch.png" > arch.md
 
 # 2. 渲染 Mermaid（用支持 Mermaid 的编辑器 / GitHub / 在线工具）
 # 3. 基于 Mermaid 代码维护，而不是基于截图
