@@ -1,0 +1,6 @@
+{
+  "name": "linger-image-plugin",
+  "version": "1.0.0",
+  "description": "多渠道识图插件：图片识别、UI/UX 界面分析、UI 素材设计提示词生成",
+  "contextFileName": "AGENTS.md"
+}

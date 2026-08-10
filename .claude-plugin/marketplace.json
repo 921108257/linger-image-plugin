@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "linger-image-plugin",
+  "description": "多渠道识图插件，给任意 Agent 加上看图能力",
+  "owner": {
+    "name": "BaseLinger",
+    "url": "https://github.com/BaseLinger"
+  },
+  "plugins": [
+    {
+      "name": "linger-image-plugin",
+      "description": "图片识别、UI/UX 界面分析、UI 素材设计提示词生成。支持配置多个识图渠道并自动故障转移。",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

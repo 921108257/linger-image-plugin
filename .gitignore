@@ -1,0 +1,16 @@
+node_modules/
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.env
+.env.local
+.linger-image.json
+.driver-*.json
+test/fixtures/*.png
+!test/fixtures/.gitkeep
+coverage/
+dist/

@@ -1,0 +1,53 @@
+{
+  "name": "linger-image-plugin",
+  "version": "1.0.0",
+  "description": "多渠道识图插件，为没有原生识图能力的 Agent 添加图片识别、UI 分析、设计提示词生成功能",
+  "keywords": ["claude-code", "vision", "ui-analysis", "image-recognition", "multi-agent"],
+  "license": "MIT",
+  "author": {
+    "name": "BaseLinger",
+    "url": "https://github.com/BaseLinger"
+  },
+  "homepage": "https://github.com/BaseLinger/linger-image-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaseLinger/linger-image-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BaseLinger/linger-image-plugin/issues"
+  },
+  "type": "module",
+  "main": "./lib/cli.mjs",
+  "exports": {
+    ".": "./lib/cli.mjs",
+    "./config": "./lib/config.mjs",
+    "./vision": "./lib/vision.mjs",
+    "./prompts": "./lib/prompts.mjs"
+  },
+  "bin": {
+    "linger-image": "./bin/linger-image.mjs"
+  },
+  "files": [
+    "lib/",
+    "bin/",
+    "install/",
+    "skills/",
+    ".claude-plugin/",
+    ".codex-plugin/",
+    ".kiro/",
+    ".cursor/",
+    ".windsurf/",
+    ".opencode/",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:watch": "node --test --watch test/*.test.mjs",
+    "postinstall": "node install/postinstall.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "linger-image-plugin",
+  "displayName": "Linger Image Plugin",
+  "version": "1.0.0",
+  "description": "多渠道识图插件：为没有原生识图能力的模型提供图片识别、UI/UX 界面分析、UI 素材设计提示词生成",
+  "author": {
+    "name": "BaseLinger",
+    "url": "https://github.com/BaseLinger"
+  },
+  "homepage": "https://github.com/BaseLinger/linger-image-plugin",
+  "repository": "https://github.com/BaseLinger/linger-image-plugin",
+  "license": "MIT",
+  "keywords": ["vision", "image-recognition", "ui-analysis", "design", "multi-channel"],
+  "skills": "./skills/"
+}

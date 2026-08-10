@@ -1,0 +1,41 @@
+{
+  "$comment": "拷成 .linger-image.json（项目级）或 ~/.linger-image/config.json（用户级）后按需修改。apiKey 支持 env:VAR_NAME 间接引用，这样配置文件可以安全进版本库。",
+  "defaultChannel": "qwen",
+  "failover": true,
+  "channels": [
+    {
+      "name": "qwen",
+      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "qwen-vl-max",
+      "apiKey": "env:DASHSCOPE_API_KEY",
+      "maxTokens": 2048,
+      "skills": {
+        "ui-ux-vision": { "maxTokens": 4096 },
+        "ui-material-design": { "maxTokens": 4096 }
+      }
+    },
+    {
+      "name": "zhipu",
+      "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+      "model": "glm-4v-flash",
+      "apiKey": "env:ZHIPU_API_KEY",
+      "maxTokens": 2048
+    },
+    {
+      "name": "openai",
+      "baseUrl": "https://api.openai.com/v1",
+      "model": "gpt-4o-mini",
+      "apiKey": "env:OPENAI_API_KEY",
+      "maxTokens": 2048,
+      "detail": "high"
+    },
+    {
+      "name": "ollama",
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "model": "llama3.2-vision",
+      "apiKey": "ollama",
+      "maxTokens": 2048,
+      "timeoutMs": 300000
+    }
+  ]
+}

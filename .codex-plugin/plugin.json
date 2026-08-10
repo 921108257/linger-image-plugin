@@ -1,0 +1,28 @@
+{
+  "name": "linger-image-plugin",
+  "version": "1.0.0",
+  "description": "多渠道识图插件：图片识别、UI/UX 界面分析、UI 素材设计提示词生成",
+  "author": {
+    "name": "BaseLinger",
+    "url": "https://github.com/BaseLinger"
+  },
+  "homepage": "https://github.com/BaseLinger/linger-image-plugin",
+  "repository": "https://github.com/BaseLinger/linger-image-plugin",
+  "license": "MIT",
+  "keywords": ["vision", "image-recognition", "ui-analysis", "design"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Linger Image",
+    "shortDescription": "多渠道识图能力",
+    "longDescription": "为没有原生识图能力的模型接入 OpenAI 兼容的 vision API，提供通用识图、UI/UX 界面分析和 UI 素材设计提示词生成三个技能，支持多渠道配置与故障转移。",
+    "developerName": "BaseLinger",
+    "category": "Productivity",
+    "capabilities": ["Skills", "CLI"],
+    "websiteURL": "https://github.com/BaseLinger/linger-image-plugin",
+    "defaultPrompt": [
+      "看看这张截图里是什么",
+      "分析这个界面的设计系统",
+      "根据这张参考图生成素材提示词"
+    ]
+  }
+}

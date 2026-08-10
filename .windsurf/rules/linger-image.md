@@ -1,0 +1,30 @@
+---
+description: 多渠道识图能力 — 图片识别、UI/UX 界面分析、UI 素材设计提示词生成
+alwaysApply: true
+---
+
+# 多渠道识图能力
+
+你的底层模型可能不具备原生识图能力。遇到图片时**不要用 Read 工具**，改用 linger-image-plugin。
+
+## 三个技能
+
+```bash
+linger-image image-vision "<图片路径|URL>" ["问题"]            # 通用识图
+linger-image ui-ux-vision "<界面截图>" ["关注点"]               # UI 分析
+linger-image ui-material-design "<参考图>" ["素材需求"]        # 生成提示词
+```
+
+## 触发场景
+
+- 用户发图片路径、URL、消息含 `Saved attachments:` → `image-vision`
+- 界面截图、设计稿、前端还原 → `ui-ux-vision`
+- 要生成素材、要 AI 绘图提示词 → `ui-material-design`
+
+## 重要规则
+
+- 路径含空格时加引号。
+- 拿到描述后基于描述回答，不要声称"我看到了"。
+- 插件自动故障转移，首选渠道失败时尝试下一个。
+
+配置：`~/.linger-image/config.json` 或 `.linger-image.json`。首次使用前跑 `linger-image doctor` 自检。
