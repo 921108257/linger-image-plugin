@@ -1,6 +1,6 @@
 # linger-image-plugin
 
-多渠道识图插件，为没有原生识图能力的 Agent 提供图片识别、UI/UX 界面分析和 UI 素材设计提示词生成。
+多渠道识图插件，为没有原生识图能力的 Agent 提供图片识别、UI/UX 界面分析、设计提示词生成、技术图表分析、报错诊断等能力。
 
 [![npm version](https://img.shields.io/npm/v/linger-image-plugin.svg)](https://www.npmjs.com/package/linger-image-plugin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -9,7 +9,7 @@
 
 ## 特性
 
-- **三个技能**：通用识图、UI/UX 界面分析、UI 素材设计提示词生成
+- **五个技能**：通用识图、UI/UX 界面分析、UI 素材设计提示词、技术图表分析、报错诊断
 - **多渠道配置**：OpenAI 兼容格式，支持阿里云百炼、OpenAI、智谱、硅基流动、Ollama 等
 - **故障转移**：首选渠道失败时自动切换到下一个
 - **跨 Agent 安装**：一行命令装到 Claude Code、Cursor、Windsurf、Kiro、opencode 等
@@ -56,19 +56,27 @@ linger-image ui-ux-vision ./design.png "重点看导航和栅格"
 
 # 生成 UI 素材提示词
 linger-image ui-material-design ./ref.jpg "生成深色系图标素材提示词"
+
+# 技术图表分析
+linger-image diagram-vision ./arch.png "转成 Mermaid 代码"
+
+# 报错截图诊断
+linger-image error-diagnosis ./error.png
 ```
 
 ---
 
-## 三个技能
+## 五个技能
 
 | 技能 | 用途 | 触发场景 |
 |------|------|---------|
 | **image-vision** | 通用图片识别 | 读内容、认物体、OCR、截图排错 |
 | **ui-ux-vision** | UI/UX 界面分析 | 组件清单、设计 token、可访问性、前端还原 |
 | **ui-material-design** | UI 素材设计提示词生成 | 根据参考图输出 Midjourney / SD / DALL-E 提示词 |
+| **diagram-vision** | 技术图表分析 | 架构图、流程图、ER 图，输出 Mermaid 代码 |
+| **error-diagnosis** | 报错截图诊断 | 提取错误信息、定位根因、给出修复方案 |
 
-详细说明见各技能的 `SKILL.md`（`/image-vision` / `/ui-ux-vision` / `/ui-material-design`）。
+详细说明见各技能的 `SKILL.md`。
 
 ---
 

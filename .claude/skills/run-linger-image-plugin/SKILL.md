@@ -1,7 +1,7 @@
 ---
 name: run-linger-image-plugin
 description: >
-  验证 linger-image-plugin 插件的安装和配置。启动 mock 服务测试三个技能的调用链
+  验证 linger-image-plugin 插件的安装和配置。启动 mock 服务测试五个技能的调用链
   以及故障转移，或检查真实配置的连通性。用于"测试识图插件""跑通识图""验证安装"
   "linger-image 能用吗""识图配置对不对"。
 ---
@@ -30,17 +30,19 @@ node .claude/skills/run-linger-image-plugin/driver.mjs --mock
 启动 mock vision API...
   mock API: http://127.0.0.1:xxxxx/v1
 
-测试三个技能:
+测试五个技能:
 
   ✓ image-vision
   ✓ ui-ux-vision
   ✓ ui-material-design
+  ✓ diagram-vision
+  ✓ error-diagnosis
 
 测试故障转移:
 
   ✓ 故障转移成功
 
-总计: 4/4 通过
+总计: 6/6 通过
 ```
 
 mock 模式验证的是：
@@ -48,7 +50,7 @@ mock 模式验证的是：
 - 配置加载与渠道选择
 - 图片编码（base64 / URL）
 - HTTP 请求构造
-- 三个技能的提示词轮廓
+- 五个技能的提示词轮廓
 - 多渠道故障转移逻辑
 
 **方式二：检查真实配置**
@@ -107,6 +109,8 @@ node .claude/skills/run-linger-image-plugin/driver.mjs --mock
 | `image-vision` | 通用图片识别 — 读内容、认物体、OCR、截图排错 |
 | `ui-ux-vision` | UI/UX 界面分析 — 组件清单、设计 token、可访问性 |
 | `ui-material-design` | UI 素材设计提示词生成 — 输出 Midjourney / SD / DALL-E 提示词 |
+| `diagram-vision` | 技术图表分析 — 架构图、流程图、ER 图，输出 Mermaid 代码 |
+| `error-diagnosis` | 报错截图诊断 — 提取错误信息、定位根因、给出修复方案 |
 
 调用示例：
 
@@ -114,6 +118,8 @@ node .claude/skills/run-linger-image-plugin/driver.mjs --mock
 linger-image image-vision ./screenshot.png
 linger-image ui-ux-vision ./design.png "重点看导航"
 linger-image ui-material-design ./ref.jpg "生成深色系图标提示词"
+linger-image diagram-vision ./arch.png "转成 Mermaid"
+linger-image error-diagnosis ./error.png
 ```
 
 ## Troubleshooting

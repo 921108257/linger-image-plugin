@@ -85,14 +85,27 @@ test("encodeImage: 剥掉引号和 file:// 前缀", () => {
 });
 
 test("loadConfig: 读取显式配置文件并解析 env: 引用", () => {
-  const cfg = loadConfig({ env: { LINGER_IMAGE_CONFIG: configPath, MY_BACKUP_KEY: "sk-from-env" } });
+  const cfg = loadConfig({
+    cwd: tmpDir,
+    env: {
+      LINGER_IMAGE_CONFIG: configPath,
+      MY_BACKUP_KEY: "sk-from-env",
+    },
+    userConfigPath: path.join(tmpDir, "nonexistent.json"),  // 隔离用户级配置
+  });
   assert.equal(cfg.channels.length, 2);
   assert.equal(cfg.defaultChannel, "primary");
   assert.equal(cfg.channels[1].apiKey, "sk-from-env");
 });
 
 test("loadConfig: env: 引用未设置时 apiKey 为空，validateChannel 能说清", () => {
-  const cfg = loadConfig({ env: { LINGER_IMAGE_CONFIG: configPath } });
+  const cfg = loadConfig({
+    cwd: tmpDir,
+    env: {
+      LINGER_IMAGE_CONFIG: configPath,
+    },
+    userConfigPath: path.join(tmpDir, "nonexistent.json"),  // 隔离用户级配置
+  });
   const backup = cfg.channels.find((c) => c.name === "backup");
   assert.deepEqual(validateChannel(backup), ["apiKey（env:MY_BACKUP_KEY 未设置）"]);
 });
@@ -100,7 +113,12 @@ test("loadConfig: env: 引用未设置时 apiKey 为空，validateChannel 能说
 test("loadConfig: 纯环境变量也能合成渠道", () => {
   const cfg = loadConfig({
     cwd: tmpDir,
-    env: { LINGER_VISION_API_KEY: "sk-env", LINGER_VISION_BASE_URL: baseUrl, LINGER_VISION_MODEL: "m1" },
+    env: {
+      LINGER_VISION_API_KEY: "sk-env",
+      LINGER_VISION_BASE_URL: baseUrl,
+      LINGER_VISION_MODEL: "m1",
+    },
+    userConfigPath: path.join(tmpDir, "nonexistent.json"),  // 隔离用户级配置
   });
   assert.equal(cfg.channels.length, 1);
   assert.equal(cfg.channels[0].name, "env");
@@ -108,23 +126,49 @@ test("loadConfig: 纯环境变量也能合成渠道", () => {
 });
 
 test("resolveChannelOrder: --channel 指定的排第一，其余作为转移候选", () => {
-  const cfg = loadConfig({ env: { LINGER_IMAGE_CONFIG: configPath, MY_BACKUP_KEY: "k" } });
+  const cfg = loadConfig({
+    cwd: tmpDir,
+    env: {
+      LINGER_IMAGE_CONFIG: configPath,
+      MY_BACKUP_KEY: "k",
+    },
+    userConfigPath: path.join(tmpDir, "nonexistent.json"),
+  });
   const order = resolveChannelOrder(cfg, "backup");
   assert.deepEqual(order.map((c) => c.name), ["backup", "primary"]);
 });
 
 test("resolveChannelOrder: 未知渠道名报错并列出可用渠道", () => {
-  const cfg = loadConfig({ env: { LINGER_IMAGE_CONFIG: configPath } });
+  const cfg = loadConfig({
+    cwd: tmpDir,
+    env: {
+      LINGER_IMAGE_CONFIG: configPath,
+    },
+    userConfigPath: path.join(tmpDir, "nonexistent.json"),
+  });
   assert.throws(() => resolveChannelOrder(cfg, "ghost"), /不存在.*primary, backup/s);
 });
 
 test("resolveChannelOrder: failover 关闭时只返回首选渠道", () => {
-  const cfg = loadConfig({ env: { LINGER_IMAGE_CONFIG: configPath, LINGER_VISION_FAILOVER: "0" } });
+  const cfg = loadConfig({
+    cwd: tmpDir,
+    env: {
+      LINGER_IMAGE_CONFIG: configPath,
+      LINGER_VISION_FAILOVER: "0",
+    },
+    userConfigPath: path.join(tmpDir, "nonexistent.json"),
+  });
   assert.equal(resolveChannelOrder(cfg).length, 1);
 });
 
 test("analyze: 端到端命中 mock，并带回渠道/模型/用量", async () => {
-  const cfg = loadConfig({ env: { LINGER_IMAGE_CONFIG: configPath } });
+  const cfg = loadConfig({
+    cwd: tmpDir,
+    env: {
+      LINGER_IMAGE_CONFIG: configPath,
+    },
+    userConfigPath: path.join(tmpDir, "nonexistent.json"),
+  });
   const r = await analyze({
     channels: [cfg.channels[0]],
     images: [encodeImage(pngPath)],
@@ -226,6 +270,25 @@ test("CLI run: 三个技能都能端到端出结果，且 system 提示词各不
     seenSystems.add(mock.received[before].system);
   }
   assert.equal(seenSystems.size, 3, "三个技能应发出三种不同的 system 提示词");
+});
+
+test("CLI run: 五个技能都能端到端出结果，且 system 提示词各不相同", async () => {
+  const seenSystems = new Set();
+  for (const skill of ["image-vision", "ui-ux-vision", "ui-material-design", "diagram-vision", "error-diagnosis"]) {
+    let stdout = "";
+    const before = mock.received.length;
+    const code = await run([skill, pngPath, "--json", "--quiet"], {
+      out: (s) => (stdout += s),
+      err: () => {},
+    });
+    assert.equal(code, 0, `${skill} 应该退出码 0`);
+    const parsed = JSON.parse(stdout);
+    assert.equal(parsed.skill, skill);
+    assert.equal(parsed.channel, "primary");
+    assert.match(parsed.text, /MOCK-OK/);
+    seenSystems.add(mock.received[before].system);
+  }
+  assert.equal(seenSystems.size, 5, "五个技能应发出五种不同的 system 提示词");
 });
 
 test("CLI run: channels --json 报告每个渠道缺什么", async () => {

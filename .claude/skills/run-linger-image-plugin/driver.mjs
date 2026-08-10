@@ -59,8 +59,8 @@ async function runMock() {
   const saved = process.env.LINGER_IMAGE_CONFIG;
   process.env.LINGER_IMAGE_CONFIG = tmpConfig;
 
-  log("\n测试三个技能:\n");
-  const skills = ["image-vision", "ui-ux-vision", "ui-material-design"];
+  log("\n测试五个技能:\n");
+  const skills = ["image-vision", "ui-ux-vision", "ui-material-design", "diagram-vision", "error-diagnosis"];
   let ok = 0;
 
   for (const skill of skills) {
@@ -105,8 +105,8 @@ async function runMock() {
   fs.unlinkSync(brokenConfig);
   await mock.close();
 
-  log(`\n总计: ${ok + (failoverOk ? 1 : 0)}/4 通过\n`);
-  return ok === 3 && failoverOk ? 0 : 1;
+  log(`\n总计: ${ok + (failoverOk ? 1 : 0)}/6 通过\n`);
+  return ok === 5 && failoverOk ? 0 : 1;
 }
 
 async function checkConfig() {

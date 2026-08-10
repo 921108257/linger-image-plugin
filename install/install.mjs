@@ -36,6 +36,8 @@ const TARGETS = {
       ["skills/image-vision", path.join(root, "skills", "image-vision")],
       ["skills/ui-ux-vision", path.join(root, "skills", "ui-ux-vision")],
       ["skills/ui-material-design", path.join(root, "skills", "ui-material-design")],
+      ["skills/diagram-vision", path.join(root, "skills", "diagram-vision")],
+      ["skills/error-diagnosis", path.join(root, "skills", "error-diagnosis")],
     ],
   },
   codex: {
@@ -47,6 +49,8 @@ const TARGETS = {
       ["skills/image-vision", path.join(root, "skills", "image-vision")],
       ["skills/ui-ux-vision", path.join(root, "skills", "ui-ux-vision")],
       ["skills/ui-material-design", path.join(root, "skills", "ui-material-design")],
+      ["skills/diagram-vision", path.join(root, "skills", "diagram-vision")],
+      ["skills/error-diagnosis", path.join(root, "skills", "error-diagnosis")],
     ],
   },
   cursor: {
@@ -86,6 +90,8 @@ const TARGETS = {
       [".opencode/command/image-vision.md", path.join(root, "command", "image-vision.md")],
       [".opencode/command/ui-ux-vision.md", path.join(root, "command", "ui-ux-vision.md")],
       [".opencode/command/ui-material-design.md", path.join(root, "command", "ui-material-design.md")],
+      [".opencode/command/diagram-vision.md", path.join(root, "command", "diagram-vision.md")],
+      [".opencode/command/error-diagnosis.md", path.join(root, "command", "error-diagnosis.md")],
     ],
   },
   gemini: {

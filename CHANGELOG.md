@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-08-10
+
+### Added
+
+- 新增两个识图技能：
+  - `diagram-vision`: 技术图表分析（架构图、流程图、ER 图，输出 Mermaid 代码）
+  - `error-diagnosis`: 报错截图诊断（提取错误信息、定位根因、给出修复方案）
+- 测试套件扩展到 28 个用例，覆盖新增技能
+- Mock 驱动器现在测试 5 个技能（从 3 个扩展到 5 个）
+
+### Changed
+
+- 改进测试隔离：`loadConfig` 现在接受 `userConfigPath` 参数，避免测试污染用户配置
+- 更新帮助文档，反映 5 个技能
+- 更新 README.md 和 SKILL.md，包含新增技能的说明
+
 ## [1.0.0] - 2025-08-10
 
 ### Added
@@ -57,4 +73,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ollama（llama3.2-vision）
 - 其他 OpenAI 兼容服务
 
-[1.0.0]: https://github.com/BaseLinger/linger-image-plugin/releases/tag/v1.0.0
+[1.1.0]: https://github.com/921108257/linger-image-plugin/releases/tag/v1.1.0
+[1.0.0]: https://github.com/921108257/linger-image-plugin/releases/tag/v1.0.0
