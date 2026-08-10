@@ -1,6 +1,6 @@
 {
   "name": "linger-image-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "多渠道识图插件，为没有原生识图能力的 Agent 添加图片识别、UI 分析、设计提示词生成功能",
   "keywords": [
     "claude-code",
