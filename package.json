@@ -7,7 +7,15 @@
     "vision",
     "ui-analysis",
     "image-recognition",
-    "multi-agent"
+    "multi-agent",
+    "ocr",
+    "ai",
+    "diagram",
+    "mermaid",
+    "error-diagnosis",
+    "ui-ux",
+    "prompt-generator",
+    "multimodal"
   ],
   "license": "MIT",
   "author": {
