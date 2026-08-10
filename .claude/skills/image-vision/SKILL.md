@@ -17,15 +17,15 @@ license: MIT
 ## 怎么用
 
 ```bash
-npx linger-image-plugin image-vision "<图片路径>" ["问题"]
+npx linger-image image-vision "<图片路径>" ["问题"]
 ```
 
-示例：
+插件已安装时可直接用短命令：
 
 ```bash
-npx linger-image-plugin image-vision "./screenshot.png"
-npx linger-image-plugin image-vision "./error.png" "这个报错是什么原因"
-npx linger-image-plugin image-vision "https://example.com/chart.png" "图里的数值趋势"
+linger-image image-vision "./screenshot.png"
+linger-image image-vision "./error.png" "这个报错是什么原因"
+linger-image image-vision "https://example.com/chart.png" "图里的数值趋势"
 ```
 
 ## 触发场景

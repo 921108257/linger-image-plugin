@@ -92,8 +92,11 @@ export function createMockServer() {
 }
 
 // 直接运行时当独立服务用
-if (import.meta.url === `file://${process.argv[1]?.replace(/\\/g, "/")}`) {
+if (import.meta.url.endsWith(process.argv[1]?.replace(/\\/g, "/"))) {
   const mock = createMockServer();
-  const url = await mock.listen(Number(process.argv[2]) || 8899);
+  const url = await mock.listen(Number(process.argv[2]) || 3456);
   process.stdout.write(`mock vision API 已启动: ${url}\n`);
+  process.on("SIGINT", () => {
+    mock.close().then(() => process.exit(0));
+  });
 }
