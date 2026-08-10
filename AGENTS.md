@@ -1,8 +1,8 @@
 # linger-image-plugin — 多渠道识图能力
 
-为没有原生识图能力的 Agent 提供图片识别、UI/UX 界面分析和 UI 素材设计提示词生成。
+为没有原生识图能力的 Agent 提供图片识别、UI/UX 界面分析、UI 素材设计提示词生成、技术图表分析和报错诊断。
 
-## 三个技能
+## 五个技能
 
 ```bash
 # 通用图片识别 — 读内容、认物体、OCR、截图排错
@@ -13,6 +13,12 @@ linger-image ui-ux-vision "<界面截图>" ["关注点"]
 
 # UI 素材设计提示词生成 — 输出 Midjourney / SD / DALL-E 提示词
 linger-image ui-material-design "<参考图>" ["素材需求"]
+
+# 技术图表分析 — 架构图、流程图、ER 图，输出 Mermaid 代码
+linger-image diagram-vision "<图表截图>" ["关注点"]
+
+# 报错截图诊断 — 提取错误信息、定位根因、给出修复方案
+linger-image error-diagnosis "<报错截图>" ["问题"]
 ```
 
 ## 触发场景
@@ -20,6 +26,8 @@ linger-image ui-material-design "<参考图>" ["素材需求"]
 - 用户发图片路径、图片 URL、消息含 `Saved attachments:` → `image-vision`
 - 界面截图、设计稿、前端还原 → `ui-ux-vision`
 - 要生成素材、要 AI 绘图提示词 → `ui-material-design`
+- 技术图表、架构图、流程图、ER 图 → `diagram-vision`
+- 报错截图、异常堆栈、错误弹窗 → `error-diagnosis`
 
 ## 重要规则
 
@@ -61,4 +69,4 @@ OpenAI 兼容格式的任意 vision 模型：
 
 配置多个渠道时，首选失败自动转移到下一个。
 
-详细文档：每个技能的 `SKILL.md`（调用对应的 slash command：`/image-vision` / `/ui-ux-vision` / `/ui-material-design`）。
+详细文档：每个技能的 `SKILL.md`（调用对应的 slash command：`/image-vision` / `/ui-ux-vision` / `/ui-material-design` / `/diagram-vision` / `/error-diagnosis`）。
