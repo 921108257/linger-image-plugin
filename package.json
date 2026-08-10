@@ -5,7 +5,7 @@
   "keywords": ["claude-code", "vision", "ui-analysis", "image-recognition", "multi-agent"],
   "license": "MIT",
   "author": {
-    "name": "BaseLinger",
+    "name": "Linger",
     "url": "https://github.com/BaseLinger"
   },
   "homepage": "https://github.com/BaseLinger/linger-image-plugin",
