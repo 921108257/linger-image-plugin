@@ -1,8 +1,14 @@
 {
   "name": "linger-image-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "多渠道识图插件，为没有原生识图能力的 Agent 添加图片识别、UI 分析、设计提示词生成功能",
-  "keywords": ["claude-code", "vision", "ui-analysis", "image-recognition", "multi-agent"],
+  "keywords": [
+    "claude-code",
+    "vision",
+    "ui-analysis",
+    "image-recognition",
+    "multi-agent"
+  ],
   "license": "MIT",
   "author": {
     "name": "Linger",
