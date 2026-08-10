@@ -199,8 +199,12 @@ export async function runInstall(argv, log = (s) => process.stdout.write(`${s}\n
   if (!agents.length) {
     agents = detectAgents();
     if (!agents.length) {
-      log("没检测到任何支持的 Agent。");
-      log("用 --agent claude 手动指定，或 --list 看支持列表。");
+      log("没检测到任何支持的 Agent。\n");
+      log("查看支持列表:");
+      log("  npx linger-image-plugin install --list\n");
+      log("手动指定 Agent:");
+      log("  npx linger-image-plugin install --agent claude");
+      log("  npx linger-image-plugin install --agent cursor,windsurf");
       return 1;
     }
     log(`自动检测到: ${agents.join(", ")}`);
