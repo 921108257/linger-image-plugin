@@ -16,7 +16,8 @@ import { createMockServer } from "../../../test/mock-server.mjs";
 import { run as cliRun } from "../../../lib/cli.mjs";
 import { loadConfig } from "../../../lib/config.mjs";
 
-const PKG_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+// driver 位于 <包根>/.claude/skills/run-linger-image-plugin/，回三层到包根
+const PKG_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..");
 const TEST_PNG = path.join(PKG_ROOT, "test", "fixtures", "test.png");
 
 // 确保测试图存在
