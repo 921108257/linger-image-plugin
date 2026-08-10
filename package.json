@@ -1,20 +1,20 @@
 {
   "name": "linger-image-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "多渠道识图插件，为没有原生识图能力的 Agent 添加图片识别、UI 分析、设计提示词生成功能",
   "keywords": ["claude-code", "vision", "ui-analysis", "image-recognition", "multi-agent"],
   "license": "MIT",
   "author": {
     "name": "Linger",
-    "url": "https://github.com/BaseLinger"
+    "url": "https://github.com/921108257"
   },
-  "homepage": "https://github.com/BaseLinger/linger-image-plugin",
+  "homepage": "https://github.com/921108257/linger-image-plugin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BaseLinger/linger-image-plugin.git"
+    "url": "git+https://github.com/921108257/linger-image-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/BaseLinger/linger-image-plugin/issues"
+    "url": "https://github.com/921108257/linger-image-plugin/issues"
   },
   "type": "module",
   "main": "./lib/cli.mjs",
@@ -25,7 +25,7 @@
     "./prompts": "./lib/prompts.mjs"
   },
   "bin": {
-    "linger-image": "./bin/linger-image.mjs"
+    "linger-image": "./bin/linger-image"
   },
   "files": [
     "lib/",
