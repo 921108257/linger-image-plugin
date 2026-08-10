@@ -21,6 +21,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 更新帮助文档，反映 5 个技能
 - 更新 README.md 和 SKILL.md，包含新增技能的说明
 
+### Improved
+
+- 改进 HTTP 400 错误提示：检测到图片格式/尺寸相关错误时，自动提示"调整图片大小或格式"
+- 错误信息更精准，覆盖 image/size/dimension/resolution/format 等关键词
+
 ## [1.0.0] - 2025-08-10
 
 ### Added
