@@ -20,7 +20,7 @@ license: MIT
 
 **开发模式（本地未发布）**：
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-ux-vision "<界面截图>" ["关注点"]
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" ui-ux-vision "<界面截图>" ["关注点"]
 ```
 
 **发布后（用户安装后）**：
@@ -29,9 +29,9 @@ npx linger-image-plugin ui-ux-vision "<界面截图>" ["关注点"]
 ```
 
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-ux-vision "./design.png"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-ux-vision "./page.png" "重点看导航和栅格系统"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-ux-vision "./mobile.png" "这个表单的可访问性问题"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" ui-ux-vision "./design.png"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" ui-ux-vision "./page.png" "重点看导航和栅格系统"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" ui-ux-vision "./mobile.png" "这个表单的可访问性问题"
 ```
 
 ## 默认输出什么
@@ -51,7 +51,7 @@ node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs
 
 ```bash
 # 1. 先读稿，拿到组件清单和 design token
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" ui-ux-vision "./ref.png" > /tmp/ui-spec.md
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" ui-ux-vision "./ref.png" > /tmp/ui-spec.md
 
 # 2. 基于 spec 写代码，而不是基于"我猜这个图长什么样"
 ```
