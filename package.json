@@ -31,7 +31,7 @@
     "./prompts": "./lib/prompts.mjs"
   },
   "bin": {
-    "linger-image": "./bin/linger-image"
+    "linger-image": "./bin/linger-image.mjs"
   },
   "files": [
     "lib/",

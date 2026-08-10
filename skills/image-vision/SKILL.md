@@ -18,7 +18,7 @@ license: MIT
 
 **开发模式（本地未发布）**：
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" image-vision "<图片路径>" ["问题"]
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" image-vision "<图片路径>" ["问题"]
 ```
 
 **发布后（用户安装后）**：
@@ -29,9 +29,9 @@ npx linger-image-plugin image-vision "<图片路径>" ["问题"]
 示例：
 
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" image-vision "./screenshot.png"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" image-vision "./error.png" "这个报错是什么原因"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image" image-vision "https://example.com/chart.png" "图里的数值趋势"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" image-vision "./screenshot.png"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" image-vision "./error.png" "这个报错是什么原因"
+node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.mjs" image-vision "https://example.com/chart.png" "图里的数值趋势"
 ```
 
 ## 触发场景
