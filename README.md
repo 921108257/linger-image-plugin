@@ -19,6 +19,8 @@
 
 ## 快速开始
 
+**新用户？** 5 分钟上手指南：[QUICKSTART.md](QUICKSTART.md)
+
 ### 1. 安装
 
 ```bash

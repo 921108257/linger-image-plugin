@@ -55,7 +55,8 @@
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
-    "EXAMPLES.md"
+    "EXAMPLES.md",
+    "QUICKSTART.md"
   ],
   "scripts": {
     "test": "node --test test/*.test.mjs",
