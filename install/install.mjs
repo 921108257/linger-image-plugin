@@ -166,7 +166,11 @@ export function installTo(agentId, { local = false, cwd = process.cwd(), dryRun 
   for (const [rel, dest] of target.entries(root)) {
     const src = path.join(PKG_ROOT, rel);
     if (!fs.existsSync(src)) throw new Error(`包内缺少文件: ${rel}（安装包可能不完整）`);
-    if (!dryRun) copyRecursive(src, dest);
+    if (!dryRun) {
+      // 先清理目标目录，避免旧版本文件残留
+      if (fs.existsSync(dest)) fs.rmSync(dest, { recursive: true, force: true });
+      copyRecursive(src, dest);
+    }
     written.push(dest);
   }
   return { agent: agentId, label: target.label, root, written, scope: local ? "project" : "user" };
