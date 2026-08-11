@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-08-11
+
+### Added
+
+- 新增技能 `ui-material-design-image`: 针对 gpt-image-2、seedream、qwen-image-3.0 等 AI 绘图模型的提示词生成
+- 技能总数从 5 个增加到 6 个
+- 支持 Qoder Agent 的安装（作为 Agent 工具，而非识图渠道）
+
+### Changed
+
+- 更新所有文档（README.md、AGENTS.md、CLI 帮助）反映 6 个技能
+- `ui-material-design` 现在明确定位为通用绘图工具（MJ/SD/DALL-E）提示词生成
+- `ui-material-design-image` 专用于 AI 绘图模型（gpt-image-2/seedream/qwen-image-3.0）提示词生成
+- example.linger-image.json 添加新技能的 maxTokens 配置示例
+
 ## [1.1.0] - 2026-08-10
 
 ### Added

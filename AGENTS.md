@@ -2,7 +2,7 @@
 
 为没有原生识图能力的 Agent 提供图片识别、UI/UX 界面分析、UI 素材设计提示词生成、技术图表分析和报错诊断。
 
-## 五个技能
+## 六个技能
 
 ```bash
 # 通用图片识别 — 读内容、认物体、OCR、截图排错
@@ -11,8 +11,11 @@ linger-image image-vision "<图片路径|URL>" ["问题"]
 # UI/UX 界面分析 — 组件清单、设计 token、可访问性
 linger-image ui-ux-vision "<界面截图>" ["关注点"]
 
-# UI 素材设计提示词生成 — 输出 Midjourney / SD / DALL-E 提示词
+# UI 素材设计提示词生成（MJ/SD/DALL-E）— 输出通用绘图工具提示词
 linger-image ui-material-design "<参考图>" ["素材需求"]
+
+# AI 绘图模型提示词生成（gpt-image-2/seedream/qwen-image-3.0）— 输出 AI 绘图模型专用提示词
+linger-image ui-material-design-image "<参考图>" ["素材需求与目标模型"]
 
 # 技术图表分析 — 架构图、流程图、ER 图，输出 Mermaid 代码
 linger-image diagram-vision "<图表截图>" ["关注点"]
@@ -25,7 +28,8 @@ linger-image error-diagnosis "<报错截图>" ["问题"]
 
 - 用户发图片路径、图片 URL、消息含 `Saved attachments:` → `image-vision`
 - 界面截图、设计稿、前端还原 → `ui-ux-vision`
-- 要生成素材、要 AI 绘图提示词 → `ui-material-design`
+- 要生成素材、要 Midjourney/SD/DALL-E 提示词 → `ui-material-design`
+- 要生成素材、要 gpt-image-2/seedream/qwen-image-3.0 提示词 → `ui-material-design-image`
 - 技术图表、架构图、流程图、ER 图 → `diagram-vision`
 - 报错截图、异常堆栈、错误弹窗 → `error-diagnosis`
 
@@ -69,4 +73,4 @@ OpenAI 兼容格式的任意 vision 模型：
 
 配置多个渠道时，首选失败自动转移到下一个。
 
-详细文档：每个技能的 `SKILL.md`（调用对应的 slash command：`/image-vision` / `/ui-ux-vision` / `/ui-material-design` / `/diagram-vision` / `/error-diagnosis`）。
+详细文档：每个技能的 `SKILL.md`（调用对应的 slash command：`/image-vision` / `/ui-ux-vision` / `/ui-material-design` / `/ui-material-design-image` / `/diagram-vision` / `/error-diagnosis`）。

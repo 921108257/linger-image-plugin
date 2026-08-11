@@ -11,7 +11,8 @@
       "maxTokens": 2048,
       "skills": {
         "ui-ux-vision": { "maxTokens": 4096 },
-        "ui-material-design": { "maxTokens": 4096 }
+        "ui-material-design": { "maxTokens": 4096 },
+        "ui-material-design-image": { "maxTokens": 4096 }
       }
     },
     {

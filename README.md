@@ -9,10 +9,10 @@
 
 ## 特性
 
-- **五个技能**：通用识图、UI/UX 界面分析、UI 素材设计提示词、技术图表分析、报错诊断
+- **六个技能**：通用识图、UI/UX 界面分析、UI 素材设计提示词（MJ/SD）、AI 绘图模型提示词（gpt-image-2/seedream/qwen-image-3.0）、技术图表分析、报错诊断
 - **多渠道配置**：OpenAI 兼容格式，支持阿里云百炼、OpenAI、智谱、硅基流动、Ollama 等
 - **故障转移**：首选渠道失败时自动切换到下一个
-- **跨 Agent 安装**：一行命令装到 Claude Code、Cursor、Windsurf、Kiro、opencode 等
+- **跨 Agent 安装**：一行命令装到 Claude Code、Cursor、Windsurf、Kiro、Qoder、opencode 等
 - **零依赖**：纯 Node.js 标准库，不装 axios / openai-sdk / dotenv
 
 ---
@@ -56,8 +56,11 @@ linger-image image-vision ./screenshot.png
 # UI 界面分析
 linger-image ui-ux-vision ./design.png "重点看导航和栅格"
 
-# 生成 UI 素材提示词
+# 生成 UI 素材提示词（通用绘图工具）
 linger-image ui-material-design ./ref.jpg "生成深色系图标素材提示词"
+
+# 生成 AI 绘图模型提示词（gpt-image-2/seedream/qwen-image-3.0）
+linger-image ui-material-design-image ./icon.png "用 gpt-image-2 生成扁平风图标"
 
 # 技术图表分析
 linger-image diagram-vision ./arch.png "转成 Mermaid 代码"
@@ -68,13 +71,14 @@ linger-image error-diagnosis ./error.png
 
 ---
 
-## 五个技能
+## 六个技能
 
 | 技能 | 用途 | 触发场景 |
 |------|------|---------|
 | **image-vision** | 通用图片识别 | 读内容、认物体、OCR、截图排错 |
 | **ui-ux-vision** | UI/UX 界面分析 | 组件清单、设计 token、可访问性、前端还原 |
-| **ui-material-design** | UI 素材设计提示词生成 | 根据参考图输出 Midjourney / SD / DALL-E 提示词 |
+| **ui-material-design** | UI 素材设计提示词（MJ/SD/DALL-E） | 根据参考图输出通用绘图工具提示词 |
+| **ui-material-design-image** | AI 绘图模型提示词（gpt-image-2/seedream/qwen-image-3.0） | 根据参考图输出 AI 绘图模型专用提示词 |
 | **diagram-vision** | 技术图表分析 | 架构图、流程图、ER 图，输出 Mermaid 代码 |
 | **error-diagnosis** | 报错截图诊断 | 提取错误信息、定位根因、给出修复方案 |
 
@@ -137,7 +141,8 @@ npx linger-image-plugin install --list
       "maxTokens": 2048,
       "skills": {
         "ui-ux-vision": { "maxTokens": 4096 },
-        "ui-material-design": { "maxTokens": 4096 }
+        "ui-material-design": { "maxTokens": 4096 },
+        "ui-material-design-image": { "maxTokens": 4096 }
       }
     },
     {
