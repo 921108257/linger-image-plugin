@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2026-08-11
+
+### Fixed
+
+- 修复 Qoder Agent 调用技能时直接使用 `linger-image` 命令导致找不到命令的问题
+- 批量替换所有技能文档中的 `linger-image` 为 `npx linger-image-plugin`
+- 确保所有 Agent 工具（Claude Code/Codex/opencode/Qoder/Kiro/Windsurf）都使用统一的 npx 命令格式
+
 ## [1.1.2] - 2026-08-11
 
 ### Changed

@@ -10,15 +10,15 @@ description: 技术图表分析（架构图/流程图/ER图），输出 Mermaid 
 ## 用法
 
 ```bash
-linger-image diagram-vision <图表截图> [关注点]
+npx linger-image-plugin diagram-vision <图表截图> [关注点]
 ```
 
 ## 示例
 
 ```bash
-linger-image diagram-vision ./architecture.png
-linger-image diagram-vision ./flow.png "重点看异常处理分支"
-linger-image diagram-vision ./er-diagram.png "提取表关系"
+npx linger-image-plugin diagram-vision ./architecture.png
+npx linger-image-plugin diagram-vision ./flow.png "重点看异常处理分支"
+npx linger-image-plugin diagram-vision ./er-diagram.png "提取表关系"
 ```
 
 ## 输出内容

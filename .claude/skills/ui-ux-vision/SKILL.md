@@ -19,13 +19,13 @@ license: MIT
 ## 怎么用
 
 ```bash
-npx linger-image ui-ux-vision "<界面截图>" ["关注点"]
+npx npx linger-image-plugin ui-ux-vision "<界面截图>" ["关注点"]
 ```
 
 ```bash
-linger-image ui-ux-vision "./design.png"
-linger-image ui-ux-vision "./page.png" "重点看导航和栅格系统"
-linger-image ui-ux-vision "./mobile.png" "这个表单的可访问性问题"
+npx linger-image-plugin ui-ux-vision "./design.png"
+npx linger-image-plugin ui-ux-vision "./page.png" "重点看导航和栅格系统"
+npx linger-image-plugin ui-ux-vision "./mobile.png" "这个表单的可访问性问题"
 ```
 
 ## 默认输出什么
@@ -45,7 +45,7 @@ linger-image ui-ux-vision "./mobile.png" "这个表单的可访问性问题"
 
 ```bash
 # 1. 先读稿，拿到组件清单和 design token
-linger-image ui-ux-vision "./ref.png" > /tmp/ui-spec.md
+npx linger-image-plugin ui-ux-vision "./ref.png" > /tmp/ui-spec.md
 
 # 2. 基于 spec 写代码，而不是基于"我猜这个图长什么样"
 ```

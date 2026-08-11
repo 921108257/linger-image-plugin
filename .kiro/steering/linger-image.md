@@ -11,13 +11,13 @@ inclusion: always
 
 ```bash
 # 通用图片识别 — 读内容、认物体、OCR、截图排错
-linger-image image-vision "<图片路径|URL>" ["问题"]
+npx linger-image-plugin image-vision "<图片路径|URL>" ["问题"]
 
 # UI/UX 界面分析 — 组件清单、设计 token、可访问性
-linger-image ui-ux-vision "<界面截图>" ["关注点"]
+npx linger-image-plugin ui-ux-vision "<界面截图>" ["关注点"]
 
 # UI 素材设计提示词生成 — 输出 Midjourney / SD / DALL-E 提示词
-linger-image ui-material-design "<参考图>" ["素材需求"]
+npx linger-image-plugin ui-material-design "<参考图>" ["素材需求"]
 ```
 
 ## 触发场景
@@ -40,6 +40,6 @@ linger-image ui-material-design "<参考图>" ["素材需求"]
 
 插件读 `~/.linger-image/config.json` 或项目内的 `.linger-image.json`。没配置时环境变量也能合成渠道。
 
-首次使用前跑 `linger-image doctor` 自检连通性。
+首次使用前跑 `npx linger-image-plugin doctor` 自检连通性。
 
 详细文档：每个技能的 SKILL.md（`/image-vision` / `/ui-ux-vision` / `/ui-material-design`）。

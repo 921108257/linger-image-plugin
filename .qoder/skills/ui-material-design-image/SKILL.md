@@ -17,14 +17,14 @@ license: MIT
 ## 怎么用
 
 ```bash
-npx linger-image ui-material-design-image "<参考图>" ["素材需求"]
+npx npx linger-image-plugin ui-material-design-image "<参考图>" ["素材需求"]
 ```
 
 ```bash
-linger-image ui-material-design-image "./ref.jpg"
-linger-image ui-material-design-image "./icon.png" "用 gpt-image-2 生成深色系应用图标"
-linger-image ui-material-design-image "./hero.png" "seedream 生成扁平风空状态插画"
-linger-image ui-material-design-image "./ui.jpg" "qwen-image-3.0 做配套的 banner 素材"
+npx linger-image-plugin ui-material-design-image "./ref.jpg"
+npx linger-image-plugin ui-material-design-image "./icon.png" "用 gpt-image-2 生成深色系应用图标"
+npx linger-image-plugin ui-material-design-image "./hero.png" "seedream 生成扁平风空状态插画"
+npx linger-image-plugin ui-material-design-image "./ui.jpg" "qwen-image-3.0 做配套的 banner 素材"
 ```
 
 ## 默认输出

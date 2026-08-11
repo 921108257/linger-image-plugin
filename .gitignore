@@ -14,3 +14,4 @@ test/fixtures/*.png
 !test/fixtures/.gitkeep
 coverage/
 dist/
+*.tgz

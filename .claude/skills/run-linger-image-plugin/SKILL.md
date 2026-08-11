@@ -3,7 +3,7 @@ name: run-linger-image-plugin
 description: >
   验证 linger-image-plugin 插件的安装和配置。启动 mock 服务测试五个技能的调用链
   以及故障转移，或检查真实配置的连通性。用于"测试识图插件""跑通识图""验证安装"
-  "linger-image 能用吗""识图配置对不对"。
+  "npx linger-image-plugin 能用吗""识图配置对不对"。
 ---
 
 # run-linger-image-plugin
@@ -77,7 +77,7 @@ node .claude/skills/run-linger-image-plugin/driver.mjs --config
 跑真实 API 请求：
 
 ```bash
-linger-image doctor
+npx linger-image-plugin doctor
 ```
 
 逐个渠道发 1x1 红点测试图，报告延迟和错误。这一步需要配置里的 API key 可用。
@@ -115,11 +115,11 @@ node .claude/skills/run-linger-image-plugin/driver.mjs --mock
 调用示例：
 
 ```bash
-linger-image image-vision ./screenshot.png
-linger-image ui-ux-vision ./design.png "重点看导航"
-linger-image ui-material-design ./ref.jpg "生成深色系图标提示词"
-linger-image diagram-vision ./arch.png "转成 Mermaid"
-linger-image error-diagnosis ./error.png
+npx linger-image-plugin image-vision ./screenshot.png
+npx linger-image-plugin ui-ux-vision ./design.png "重点看导航"
+npx linger-image-plugin ui-material-design ./ref.jpg "生成深色系图标提示词"
+npx linger-image-plugin diagram-vision ./arch.png "转成 Mermaid"
+npx linger-image-plugin error-diagnosis ./error.png
 ```
 
 ## Troubleshooting
@@ -127,7 +127,7 @@ linger-image error-diagnosis ./error.png
 | 问题 | 排查 |
 |------|------|
 | `linger-image: command not found` | `npm install -g linger-image-plugin` 或用 `npx linger-image` |
-| `没有配置任何识图渠道` | 跑 `linger-image config --channel qwen`，填 key，再 `doctor` |
+| `没有配置任何识图渠道` | 跑 `npx linger-image-plugin config --channel qwen`，填 key，再 `doctor` |
 | `apiKey（env:DASHSCOPE_API_KEY 未设置）` | 配置文件里 `"apiKey": "env:DASHSCOPE_API_KEY"` 要么改成明文 key，要么设环境变量 |
 | `HTTP 401 / 403` | API key 错了或没权限，去对应平台检查 key |
 | `HTTP 404` | `baseUrl` 或 `model` 名字不对 |
@@ -140,7 +140,7 @@ linger-image error-diagnosis ./error.png
 - 配置文件支持 `"apiKey": "env:VAR_NAME"` 间接引用，这样配置可以进版本库。
 - 配置按优先级合并：`$LINGER_IMAGE_CONFIG` 文件 → 向上查找的 `.linger-image.json` → `~/.linger-image/config.json` → 环境变量。高优先级的来源覆盖同名渠道。
 - 渠道可为单个技能覆盖 `model` / `maxTokens` / `detail` / `system`，用 `skills` 段配置。
-- Windows 路径含反斜杠和空格时**必须加引号**：`linger-image image-vision "C:\Users\你\Desktop\图.png"`。
+- Windows 路径含反斜杠和空格时**必须加引号**：`npx linger-image-plugin image-vision "C:\Users\你\Desktop\图.png"`。
 - 图片体积默认上限 10MB（base64 后更大），超过直接报错，用图片 URL 代替或先压缩。
 - mock 模式的 API 响应格式固定，只验证调用链通不通，不验证真实模型的输出质量。
 - `doctor` 自检用的是 1x1 红点测试图，走的是最小 token 请求，延迟和真实大图请求不同。

@@ -10,15 +10,15 @@ description: 报错截图诊断，提取错误信息并给出修复方案
 ## 用法
 
 ```bash
-linger-image error-diagnosis <报错截图> [上下文]
+npx linger-image-plugin error-diagnosis <报错截图> [上下文]
 ```
 
 ## 示例
 
 ```bash
-linger-image error-diagnosis ./console-error.png
-linger-image error-diagnosis ./crash.png "这是在 npm install 时报的"
-linger-image error-diagnosis ./500-page.png "生产环境突然出现的"
+npx linger-image-plugin error-diagnosis ./console-error.png
+npx linger-image-plugin error-diagnosis ./crash.png "这是在 npm install 时报的"
+npx linger-image-plugin error-diagnosis ./500-page.png "生产环境突然出现的"
 ```
 
 ## 输出内容

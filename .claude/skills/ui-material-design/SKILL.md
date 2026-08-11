@@ -17,13 +17,13 @@ license: MIT
 ## 怎么用
 
 ```bash
-npx linger-image ui-material-design "<参考图>" ["素材需求"]
+npx npx linger-image-plugin ui-material-design "<参考图>" ["素材需求"]
 ```
 
 ```bash
-linger-image ui-material-design "./ref.jpg"
-linger-image ui-material-design "./style.png" "生成深色系的应用图标素材"
-linger-image ui-material-design "./hero.png" "要一套配套的空状态插画，扁平风"
+npx linger-image-plugin ui-material-design "./ref.jpg"
+npx linger-image-plugin ui-material-design "./style.png" "生成深色系的应用图标素材"
+npx linger-image-plugin ui-material-design "./hero.png" "要一套配套的空状态插画，扁平风"
 ```
 
 ## 默认输出什么
