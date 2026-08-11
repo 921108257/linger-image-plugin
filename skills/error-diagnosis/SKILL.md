@@ -10,12 +10,6 @@ tags: [vision, error, debug, diagnosis, troubleshooting]
 
 ## 怎么用
 
-**开发模式（本地未发布）**：
-```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" error-diagnosis "<报错截图>" ["关注点"]
-```
-
-**发布后（用户安装后）**：
 ```bash
 npx linger-image-plugin error-diagnosis "<报错截图>" ["关注点"]
 ```
@@ -23,9 +17,9 @@ npx linger-image-plugin error-diagnosis "<报错截图>" ["关注点"]
 示例：
 
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" error-diagnosis "./ts-error.png"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" error-diagnosis "./500-error.png" "重点看请求头和响应体"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" error-diagnosis "./build-fail.png" "这是哪个依赖的问题"
+npx linger-image-plugin error-diagnosis "./ts-error.png"
+npx linger-image-plugin error-diagnosis "./500-error.png" "重点看请求头和响应体"
+npx linger-image-plugin error-diagnosis "./build-fail.png" "这是哪个依赖的问题"
 ```
 
 ## 默认输出什么
@@ -46,7 +40,7 @@ node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js"
 ```bash
 # 1. 截图报错信息（控制台/终端/IDE）
 # 2. 诊断
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" error-diagnosis ./error.png > diagnosis.md
+npx linger-image-plugin error-diagnosis ./error.png > diagnosis.md
 
 # 3. 看 "立即修复" 部分，复制命令或代码
 # 4. 验证修复是否生效

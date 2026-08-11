@@ -1,0 +1,12 @@
+{
+  "defaultChannel": "mock",
+  "failover": false,
+  "channels": [
+    {
+      "name": "mock",
+      "baseUrl": "http://127.0.0.1:3456/v1",
+      "model": "mock-vision",
+      "apiKey": "mock-key"
+    }
+  ]
+}

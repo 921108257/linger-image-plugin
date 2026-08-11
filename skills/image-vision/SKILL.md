@@ -16,12 +16,6 @@ license: MIT
 
 ## 怎么用
 
-**开发模式（本地未发布）**：
-```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" image-vision "<图片路径>" ["问题"]
-```
-
-**发布后（用户安装后）**：
 ```bash
 npx linger-image-plugin image-vision "<图片路径>" ["问题"]
 ```
@@ -29,9 +23,9 @@ npx linger-image-plugin image-vision "<图片路径>" ["问题"]
 示例：
 
 ```bash
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" image-vision "./screenshot.png"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" image-vision "./error.png" "这个报错是什么原因"
-node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js" image-vision "https://example.com/chart.png" "图里的数值趋势"
+npx linger-image-plugin image-vision "./screenshot.png"
+npx linger-image-plugin image-vision "./error.png" "这个报错是什么原因"
+npx linger-image-plugin image-vision "https://example.com/chart.png" "图里的数值趋势"
 ```
 
 ## 触发场景
@@ -46,7 +40,7 @@ node "C:/Users/92110/Desktop/BaseLinger/Plugin/image-plugin/bin/linger-image.js"
 多张图一次传：
 
 ```bash
-linger-image image-vision ./a.png ./b.png "对比这两张图的差异"
+npx linger-image-plugin image-vision ./a.png ./b.png "对比这两张图的差异"
 ```
 
 ## 重要规则
@@ -55,13 +49,13 @@ linger-image image-vision ./a.png ./b.png "对比这两张图的差异"
 - 一次调用只处理一组图，**不要**把多个不相关的图混在一次调用里。
 - 拿到文字描述后，基于描述回答用户，不要声称"我看到了图片"。
 - 需要机器消费结果时加 `--json`，会输出 `{skill, channel, model, ms, usage, text}`。
-- 报错先跑 `linger-image doctor` 自检，它会逐个渠道测连通性。
+- 报错先跑 `npx linger-image-plugin doctor` 自检，它会逐个渠道测连通性。
 
 ## 渠道
 
 不指定时用配置里的 `defaultChannel`，失败自动转移到其他渠道。指定渠道：
 
 ```bash
-linger-image image-vision ./a.png --channel openai
-linger-image channels          # 看有哪些渠道、各自缺什么
+npx linger-image-plugin image-vision ./a.png --channel openai
+npx linger-image-plugin channels          # 看有哪些渠道、各自缺什么
 ```
