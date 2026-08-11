@@ -103,12 +103,12 @@ const TARGETS = {
     userDir: () => path.join(HOME, ".qoder"),
     localDir: (cwd) => path.join(cwd, ".qoder"),
     entries: (root) => [
-      [".qoder/skills/image-vision", path.join(root, "skills", "image-vision")],
-      [".qoder/skills/ui-ux-vision", path.join(root, "skills", "ui-ux-vision")],
-      [".qoder/skills/ui-material-design", path.join(root, "skills", "ui-material-design")],
-      [".qoder/skills/ui-material-design-image", path.join(root, "skills", "ui-material-design-image")],
-      [".qoder/skills/diagram-vision", path.join(root, "skills", "diagram-vision")],
-      [".qoder/skills/error-diagnosis", path.join(root, "skills", "error-diagnosis")],
+      ["skills/image-vision", path.join(root, "skills", "image-vision")],
+      ["skills/ui-ux-vision", path.join(root, "skills", "ui-ux-vision")],
+      ["skills/ui-material-design", path.join(root, "skills", "ui-material-design")],
+      ["skills/ui-material-design-image", path.join(root, "skills", "ui-material-design-image")],
+      ["skills/diagram-vision", path.join(root, "skills", "diagram-vision")],
+      ["skills/error-diagnosis", path.join(root, "skills", "error-diagnosis")],
     ],
   },
   gemini: {

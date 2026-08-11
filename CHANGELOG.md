@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.5] - 2026-08-11
+
+### Fixed
+
+- 修复 Qoder Agent 安装时源路径错误导致无法安装的问题
+- Qoder 的 entries 源路径从 `.qoder/skills/...` 改为 `skills/...`（与 Claude Code/Codex 一致）
+
 ## [1.1.4] - 2026-08-11
 
 ### Fixed
