@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2026-08-11
+
+### Changed
+
+- 统一所有技能文档的命令示例，仅保留 `npx linger-image-plugin` 格式
+- 移除开发模式的 `node bin/linger-image.js` 示例路径
+- 确保所有 Agent 工具（包括非 Claude Code/Codex 的）都能正确执行命令，避免执行错误的 `node xxx` 路径命令
+
+### Fixed
+
+- 修复技能文档中混合命令格式可能导致非 Claude Code/Codex Agent 执行错误命令的问题
+
 ## [1.1.1] - 2026-08-11
 
 ### Added
